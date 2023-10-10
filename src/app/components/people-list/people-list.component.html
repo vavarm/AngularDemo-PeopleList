@@ -1,0 +1,3 @@
+<div *ngFor="let person of peopleList; index as i">
+  <people-item [person]="person" [index]="i" [numberOfModifications]="arrayNumberOfModifications[i]" [selected]="i === selectedPersonIndex" (selectPersonEvent)="SelectPerson($event)"/>
+</div>
