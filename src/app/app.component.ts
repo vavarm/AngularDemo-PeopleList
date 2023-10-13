@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core'
+import { Person } from './person'
 
 @Component({
   selector: 'app-root',
@@ -7,19 +8,19 @@ import { Component, OnInit } from '@angular/core'
 })
 export class AppComponent implements OnInit {
   title = 'PeopleList'
-  peopleList = [
+  peopleList: Person[] = [
     { name: "Fiorio", age: 26 },
     { name: "Berry", age: 18 },
     { name: "Tibermacine", age: 21 }
   ]
   arrayNumberOfModifications: number[] = []
-  AddPerson(name: string, age: number) {
-    this.peopleList.push({ name: name, age: age })
+  AddPerson(person: Person) {
+    this.peopleList.push(new Person(person.name, person.age))
     this.arrayNumberOfModifications.push(0)
   }
 
-  ModifyPerson(name: string, age: number) {
-    this.peopleList[0] = { name: name, age: age }
+  ModifyPerson(person: Person) {
+    this.peopleList[0] = new Person(person.name, person.age)
     this.arrayNumberOfModifications[0]++
   }
 

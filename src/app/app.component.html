@@ -1,4 +1,4 @@
 <people-number [numberOfPeople]="peopleList.length"/>
 <people-list [peopleList]="peopleList" [arrayNumberOfModifications]="arrayNumberOfModifications"/>
-<add-person (newPersonEvent)="AddPerson($event[0], $event[1])"></add-person>
-<modify-person (modifyPersonEvent)="ModifyPerson($event[0], $event[1])"></modify-person>
+<add-person (newPersonEvent)="AddPerson($event)"></add-person>
+<modify-person (modifyPersonEvent)="ModifyPerson($event)"></modify-person>

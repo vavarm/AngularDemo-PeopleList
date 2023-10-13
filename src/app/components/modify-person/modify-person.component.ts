@@ -1,4 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core'
+import { Person } from '../../person'
 
 @Component({
   selector: 'modify-person',
@@ -6,10 +7,9 @@ import { Component, Output, EventEmitter } from '@angular/core'
   styleUrls: ['./modify-person.component.css']
 })
 export class ModifyPersonComponent {
-  @Output() modifyPersonEvent = new EventEmitter<[string, number]>();
-  name: string = ""
-  age: number = 0
+  @Output() modifyPersonEvent = new EventEmitter<Person>();
+  person: Person = new Person("", 0)
   ModifyPerson() {
-    this.modifyPersonEvent.emit([this.name, this.age])
+    this.modifyPersonEvent.emit(this.person)
   }
 }

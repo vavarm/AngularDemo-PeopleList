@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core'
+import { Person } from '../../person'
 
 @Component({
   selector: 'add-person',
@@ -6,10 +7,11 @@ import { Component, EventEmitter, Output } from '@angular/core'
   styleUrls: ['./add-person.component.css']
 })
 export class AddPersonComponent {
-  @Output() newPersonEvent = new EventEmitter<[string, number]>();
+  @Output() newPersonEvent = new EventEmitter<Person>();
   name: string = 'Toto'
   age: number = 5
+  person: Person = new Person(this.name, this.age)
   AddPerson() {
-    this.newPersonEvent.emit([this.name, this.age])
+    this.newPersonEvent.emit(this.person)
   }
 }

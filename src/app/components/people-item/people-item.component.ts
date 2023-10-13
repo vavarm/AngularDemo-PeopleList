@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core'
+import { Person } from '../../person'
 
 @Component({
   selector: 'people-item',
@@ -6,7 +7,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core'
   styleUrls: ['./people-item.component.css']
 })
 export class PeopleItemComponent {
-  @Input() person: any
+  @Input() person!: Person
   @Input() index!: number
   @Input() selected: boolean = false
   @Output() selectPersonEvent = new EventEmitter<number>()
